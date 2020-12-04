@@ -10,6 +10,9 @@ export class Sdk extends BaseSdk {
     async getJob(id: string) {
         return this.request({uri: `/jobs/${id}`});
     }
+    async createJob(definition: any) {
+        return this.request({method: 'POST', uri: '/jobs', body: {...definition}});
+    }
 }
 
 export default Sdk
