@@ -1,0 +1,37 @@
+name: Push to Feature Branch
+
+on:
+  push:
+    branches-ignore:
+      - prod
+      - master
+      - release
+      - develop
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Set NPM Registry identity
+        uses: ohoareau/actions/npmrc-scope-authtoken-add@master
+        with:
+          scope: computo
+          token: ${{secrets.CUSTOM_NPM_TOKEN}}
+          registry: registry.npmjs.org
+
+      - name: Install
+        run: make install
+
+      - name: Test
+        run: make test
+        env:
+          CI: true

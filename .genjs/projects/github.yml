@@ -1,0 +1,11 @@
+type: cicd-github
+
+name: .github
+description: CI/CD pipeline scripts
+
+vars:
+  forced_env: dev
+  github:
+    workflows:
+      deploy-to-env: true
+      push-to-feature-branch: true

@@ -1,0 +1,12 @@
+author: {name: Olivier Hoareau, email: oha@greenberets.io}
+company: COMPUTO
+project_prefix: computo
+project_name: libs-js
+bucket_prefix: $(prefix)-computo
+project_description: COMPUTO JS/Typescript Libraries
+project_git_url: git@github.com:computodev/libs-js-public.git
+github_aws_profile: computo-${{env.env}}
+npm_scope: computo
+scm: github
+license: ISC
+node_version: 14.3.0

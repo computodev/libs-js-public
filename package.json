@@ -1,0 +1,37 @@
+{
+  "name": "@computo/libs",
+  "version": "0.0.0",
+  "description": "Public JS Libraries by Computo.io",
+  "author": "Olivier Hoareau <oha@greenberets.io>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "deploy-storybooks": "storybook-to-aws-s3 --bucket-path=dev-computo-computo-storybook/ --aws-profile=computo-dev --packages=packages --out=public",
+    "test": "jest --config jest.config.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "jest": "^26.6.3",
+    "typescript": "^4.1.2",
+    "@types/node": "^14.14.10",
+    "aws-sdk": "^2.803.0",
+    "@types/jest": "^26.0.16",
+    "ts-jest": "^26.4.4",
+    "yo": "^3.1.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "@testing-library/dom": "^7.28.1",
+    "@storybook/storybook-deployer": "^2.8.7",
+    "@genjs/genjs": "^0.3.0",
+    "@genjs/genjs-plugin-monorepo-js-libs": "^0.3.0",
+    "@genjs/genjs-plugin-cicd-github": "^0.3.0",
+    "identity-obj-proxy": "^3.0.0"
+  },
+  "resolutions": {
+    "@types/react": "^16.4.2"
+  }
+}
