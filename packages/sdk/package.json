@@ -1,6 +1,6 @@
 {
   "name": "@computo/sdk",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Computo.io JS SDK",
   "license": "MIT",
   "main": "lib/index.js",
